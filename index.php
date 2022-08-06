@@ -47,6 +47,20 @@
 
     </body>
 
+    <?php
+        $branch_name = shell_exec('git branch --show-current');
+        $hash = shell_exec('git rev-parse --short HEAD');
+        $commit_msg = shell_exec('git log -1 --pretty=format:%B');
+        $last_updated_time = shell_exec('git log -1 --format=%cd');
+        $git_author = shell_exec("git log -1 --pretty=format:'%an <%ae>'");
+        
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Git Info / Git 代码管理信息]</p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">作者(Author): <strong>'.$git_author.'</strong></p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <strong>'.$hash.'</strong></p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前分支(current branch): <strong>'.$branch_name.'</strong></p>';
+    ?>
 
     <footer style="text-align: center;">
         <p>Open-sourced website under MIT license. See <a href="https://opensource.org/licenses/MIT/">license website</a> and <a href="./LICENSE.md">license information</a> for more details.</p>
