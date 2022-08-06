@@ -40,7 +40,7 @@
             ?>
             
             <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
-                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">💫 [2022-08-05] Introducing weicheng.app practice server (隆重推出 weicheng.app 训练服务器) 💫</a>
+                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">💫 [2022-08-05] Introducing weicheng.app server for training (隆重推出 weicheng.app 练手服务器) 💫</a>
             </div>
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
             
