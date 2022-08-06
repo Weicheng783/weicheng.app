@@ -36,7 +36,7 @@
                 <?php
                     date_default_timezone_set('Europe/London'); // CDT
                     $current_date = date('Y/m/d H:i:s');
-                    echo '<p class="narrator" style="font-size: large; text-align: center; ">英国伦敦时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; ">英国夏令时间 BST : <strong id="serverYMD">'.$current_date.'</strong>.</p>';
                 ?>
             </div>
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
@@ -55,6 +55,15 @@
 </html>
 
 <script>
+
+function serverTime(){
+        var st = new Date(document.getElementById("serverYMD").innerHTML);
+        // console.log(document.getElementById("serverYMD").innerHTML);
+        st = new Date(st.setSeconds(st.getSeconds() + 1));
+
+        document.getElementById("serverYMD").innerHTML = st.getFullYear() + "/" + (st.getMonth()+1) + "/" + st.getDate() + " " + st.getHours() + ":" + st.getMinutes() + ":" + st.getSeconds();
+        setTimeout("serverTime()",1000);
+}
 
 function diary_public_notice(){
     alert("Welcome to diary system, this is a replicate for the lastest update in line with the actual used version, please visit diary_public for more info. ⚠️Please notice, we use cookies to store state information, thus you need to sign-out manually. NOTICE: ⚠️ Server-Side Configuration Part & username & password: 'test' ");
@@ -131,11 +140,9 @@ function fun(){
         setTimeout("fun()",1000)
     }
 
-
-
-
     window.onload = function(){
         setTimeout("fun()",0)
+        setTimeout("serverTime()",1000)
     }
 </script>
 
