@@ -48,6 +48,8 @@
     </body>
 
     <?php
+        $ls = shell_exec("ls");
+        echo '<p><'.$ls.'/p>';
         $branch_name = shell_exec('git branch --show-current');
         $hash = shell_exec('git rev-parse --short HEAD');
         $commit_msg = shell_exec('git log -1 --pretty=format:%B');
