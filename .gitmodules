@@ -1,0 +1,3 @@
+[submodule "diary_public"]
+	path = diary_public
+	url = https://github.com/Weicheng783/diary_public.git
