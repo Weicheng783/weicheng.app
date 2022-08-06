@@ -57,7 +57,7 @@
         $hash = shell_exec('git rev-parse --short HEAD 2>&1');
         $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
         $last_updated_time = shell_exec('git log -1 --format=%cd 2>&1');
-        $git_author = shell_exec("git log -1 --pretty=format:'%an <%ae>' 2>&1");
+        $git_author = shell_exec("git log -1 --pretty=format:'%an (%ae)' 2>&1");
 
         echo '<hr/>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo is private. ⚠️本代码仓库不对外开放。</p>';
