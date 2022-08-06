@@ -48,14 +48,11 @@
     </body>
 
     <?php
-        $branch_name = shell_exec('git branch 2>&1');
-        // $branch_name = shell_exec('git log -1');
-        $hash = shell_exec('git rev-parse --short HEAD');
-        $commit_msg = shell_exec('git log -1 --pretty=format:%B');
-        $last_updated_time = shell_exec('git log -1 --format=%cd');
-        $git_author = shell_exec("git log -1 --pretty=format:'%an <%ae>'");
-
-        echo shell_exec("whoami");
+        $branch_name = shell_exec('git branch --show-current 2>&1');
+        $hash = shell_exec('git rev-parse --short HEAD 2>&1');
+        $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
+        $last_updated_time = shell_exec('git log -1 --format=%cd 2>&1');
+        $git_author = shell_exec("git log -1 --pretty=format:'%an <%ae>' 2>&1");
         
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Git Info / Git 代码管理信息]</p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
