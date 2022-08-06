@@ -48,7 +48,7 @@
     </body>
 
     <?php
-        $branch_name = shell_exec('cd /var/www/html/weicheng; git branch --show-current');
+        $branch_name = shell_exec('git branch');
         $branch_name = shell_exec('git log -1');
         $hash = shell_exec('git rev-parse --short HEAD');
         $commit_msg = shell_exec('git log -1 --pretty=format:%B');
