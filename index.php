@@ -26,6 +26,7 @@
 
         <div id='header_group' style="display:block; text-align: center;">
         <!-- <div style="display: inline-flex;"> -->
+            <img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
             <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
             <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
 
@@ -57,7 +58,10 @@
         $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
         $last_updated_time = shell_exec('git log -1 --format=%cd 2>&1');
         $git_author = shell_exec("git log -1 --pretty=format:'%an <%ae>' 2>&1");
-        
+
+        echo '<hr/>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo is private. ⚠️本代码仓库不对外开放。</p>';
+
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Git Info / Git 代码管理信息]</p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
