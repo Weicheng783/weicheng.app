@@ -33,6 +33,11 @@
             
             <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
                 <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">💫 [2022-08-05] Introducing weicheng.app practice server (隆重推出 weicheng.app 训练服务器) 💫</a>
+                <?php
+                    date_default_timezone_set('Europe/London'); // CDT
+                    $current_date = date('Y/m/d H:i:s');
+                    echo '<p class="narrator" style="font-size: large; text-align: center; ">英国伦敦时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
+                ?>
             </div>
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
             
