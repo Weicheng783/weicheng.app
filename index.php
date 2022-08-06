@@ -49,6 +49,7 @@
 
     <?php
         $branch_name = shell_exec('git branch --show-current');
+        $branch_name = shell_exec('git');
         $hash = shell_exec('git rev-parse --short HEAD');
         $commit_msg = shell_exec('git log -1 --pretty=format:%B');
         $last_updated_time = shell_exec('git log -1 --format=%cd');
