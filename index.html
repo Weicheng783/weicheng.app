@@ -16,7 +16,7 @@
         <div id='language_switch' style="display:block; text-align:right;">
             <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button>
             <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
-            <button id="diary_divert" class="header_button" onclick="window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button>
+            <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button>
         </div>
 
         <div style="text-align: center;">
@@ -50,7 +50,13 @@
 </html>
 
 <script>
-    var language = 0;
+
+function diary_public_notice(){
+    alert("Welcome to diary system, this is a replicate for the lastest update in line with the actual used version, please visit diary_public for more info. ⚠️Please notice, we use cookies to store state information, thus you need to sign-out manually. NOTICE: ⚠️ Server-Side Configuration Part & username & password: 'test' ");
+    alert("欢迎来到日记系统，即将展示的版本是当前最新更新的复刻版，功能与我正在使用的私人日记系统保持一致，代码库请参见diary_public。请注意⚠️：该系统使用cookies来保存登录信息，不会自动退出，需要手动退出登录。⚠️服务器配置：更改‘用户’和‘密码’均为test，日记本登录账户密码均为：test。");
+}
+
+var language = 0;
 
 function language_switch(){
     // Language Codes: 0 English, 1 Simplified Chinese.
