@@ -48,6 +48,8 @@
     </body>
 
     <?php
+        $gitweb = "https://github.com/Weicheng783/weicheng.app/";
+
         $branch_name = shell_exec('git branch --show-current 2>&1');
         $hash = shell_exec('git rev-parse --short HEAD 2>&1');
         $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
@@ -58,7 +60,7 @@
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">作者(Author): <strong>'.$git_author.'</strong></p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <strong>'.$hash.'</strong></p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <a href="'.$gitweb.'commit/'.$hash.'"><strong>'.$hash.'</strong></a></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前分支(current branch): <strong>'.$branch_name.'</strong></p>';
     ?>
 
