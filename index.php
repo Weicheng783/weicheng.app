@@ -38,7 +38,6 @@
             </div>
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
             
-            <p><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/cv.pdf'">CV / RESUME / 个人简历</button></p>
         <!-- </div> -->
         </div>
 
@@ -67,6 +66,7 @@
     <div id='language_switch' style="display:block; text-align:center;">
         <!-- <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button> -->
         <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
+        <p><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/cv.pdf'">CV / RESUME / 个人简历</button></p>
         <!-- <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button> -->
     </div>
 
