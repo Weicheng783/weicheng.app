@@ -14,9 +14,9 @@
 
     <body style="background-color: antiquewhite;">
         <div id='language_switch' style="display:block; text-align:right;">
-            <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button>
+            <!-- <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button> -->
             <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
-            <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button>
+            <!-- <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button> -->
         </div>
 
         <div style="text-align: center;">
@@ -40,11 +40,11 @@
             ?>
             
             <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
-                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">💫 [2022-08-05] Introducing weicheng.app server for training (隆重推出 weicheng.app 练手服务器) 💫</a>
+                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">未来的路，自己探索啦。当我有思路的时候，会发现做事情非常容易着手。</a>
             </div>
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
             
-            <button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/cv.pdf'">CV / RESUME / 个人简历</button>
+            <p><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/cv.pdf'">CV / RESUME / 个人简历</button></p>
         <!-- </div> -->
         </div>
 
@@ -60,9 +60,9 @@
         $git_author = shell_exec("git log -1 --pretty=format:'%an (%ae)' 2>&1");
 
         echo '<hr/>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo is private. ⚠️本代码仓库不对外开放。</p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo currently private. ⚠️本代码仓库暂不对外开放。</p>';
 
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Git Info / Git 代码管理信息]</p>';
+        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Source Code Management / 代码管理]</p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">作者(Author): <strong>'.$git_author.'</strong></p>';
@@ -87,10 +87,10 @@ function serverTime(){
         setTimeout("serverTime()",1000);
 }
 
-function diary_public_notice(){
-    alert("Welcome to diary system, this is a replicate for the lastest update in line with the actual used version, please visit diary_public for more info. ⚠️Please notice, we use cookies to store state information, thus you need to sign-out manually. NOTICE: ⚠️ Server-Side Configuration Part & username & password: 'test' ");
-    alert("欢迎来到日记系统，即将展示的版本是当前最新更新的复刻版，功能与我正在使用的私人日记系统保持一致，代码库请参见diary_public。请注意⚠️：该系统使用cookies来保存登录信息，不会自动退出，需要手动退出登录。⚠️服务器配置：更改‘用户’和‘密码’均为test，日记本登录账户密码均为：test。");
-}
+// function diary_public_notice(){
+//     alert("Welcome to diary system, this is a replicate for the lastest update in line with the actual used version, please visit diary_public for more info. ⚠️Please notice, we use cookies to store state information, thus you need to sign-out manually. NOTICE: ⚠️ Server-Side Configuration Part & username & password: 'test' ");
+//     alert("欢迎来到日记系统，即将展示的版本是当前最新更新的复刻版，功能与我正在使用的私人日记系统保持一致，代码库请参见diary_public。请注意⚠️：该系统使用cookies来保存登录信息，不会自动退出，需要手动退出登录。⚠️服务器配置：更改‘用户’和‘密码’均为test，日记本登录账户密码均为：test。");
+// }
 
 var language = 0;
 
