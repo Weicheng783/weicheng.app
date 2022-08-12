@@ -13,12 +13,6 @@
 
 
     <body style="background-color: antiquewhite;">
-        <div id='language_switch' style="display:block; text-align:right;">
-            <!-- <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button> -->
-            <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
-            <!-- <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button> -->
-        </div>
-
         <div style="text-align: center;">
 
         </div>
@@ -69,6 +63,13 @@
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <a href="'.$gitweb.'commit/'.$hash.'"><strong>'.$hash.'</strong></a></p>';
         echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前分支(current branch): <a href="'.$gitweb.'tree/'.$branch_name.'"><strong>'.$branch_name.'</strong></a></p>';
     ?>
+
+    <div id='language_switch' style="display:block; text-align:center;">
+        <!-- <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button> -->
+        <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
+        <!-- <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button> -->
+    </div>
+
 
     <footer style="text-align: center;">
         <p>Open-sourced website under MIT license. See <a href="https://opensource.org/licenses/MIT/">license website</a> and <a href="./LICENSE.md">license information</a> for more details.</p>
