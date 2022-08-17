@@ -10,12 +10,13 @@
 
     <?php
         function createPostWithPhoto($baseName, $num_of_photos){
-            echo '<button id="'.$baseName.'_expand" class="header_button">展开</button>';
-            echo '<button id="'.$baseName.'_close" style="display: none;" class="header_button">收缩</button>';
+            echo '<button id="'.$baseName.'_expand" class="header_button">展开/Expand</button>';
+            echo '<button id="'.$baseName.'_close" style="display: none;" class="header_button">收缩/Minify</button>';
             echo "<div id='".$baseName."' style='display: none;'>";
             for($i = 1; $i < $num_of_photos+1; $i++){
-                echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
-                echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">查看/下载这张jpeg原大小图片</a>';
+                echo '<img id="'.$baseName.'_'.$i.'" src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
+                echo '<script>document.getElementById("'.$baseName.'_'.$i.'").addEventListener("dblclick", function(){ if(confirm("你双击点按了这张图片，想看看原图么?") == true){window.location.href = "./images/'.$baseName.'_'.$i.'.jpeg";} } );</script>';
+                // echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">查看/下载这张jpeg原大小图片</a>';
             }
             echo "</div>";
 
@@ -36,6 +37,7 @@
             <!-- <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
             <!-- <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
+            <p class="narrator" style="font-size: medium; text-align: center; ">双击照片查看/下载原大小jpeg图 / Double tap photos to gain high quality jpeg pic.</p>
         </div>
 
         <!-- Start Write Blogs -->
