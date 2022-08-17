@@ -13,29 +13,27 @@
 
 
     <body style="background-color: antiquewhite;">
-        <div style="text-align: center;">
-
-        </div>
-
-
         <div id='header_group' style="display:block; text-align: center;">
         <!-- <div style="display: inline-flex;"> -->
-            <!-- <img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
-            <!-- <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
+            <img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
+            <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
             <!-- <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
 
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
             <p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>
             
             <?php
-                date_default_timezone_set('Europe/London'); // CDT
+                date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
                 echo '<p class="narrator" style="font-size: large; text-align: center; ">英国夏令时间 BST : <strong id="serverYMD">'.$current_date.'</strong>.</p>';
             ?>
+
+            <p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/posts.php'">看最近的更新和照片 / See Recent Posts with Photos 🙃</button></p>
+
             
-            <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
-                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">未来的路，自己探索啦。当我有思路的时候，会发现做事情非常容易着手。</a>
-            </div>
+            <!-- <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
+                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">未来的路，自己探索啦。当我有思路的时候，会发现做事情非常容易着手。</p>
+            </div> -->
             <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
             
         <!-- </div> -->
