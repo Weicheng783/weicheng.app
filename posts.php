@@ -11,7 +11,7 @@
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
 
-    <body style="background-color: antiquewhite;">
+    <body style="background-color: antiquewhite; text-align:center;">
         <div id='header_group' style="display:block; text-align: center;">
             <!-- <div style="display: inline-flex;"> -->
             <!-- <img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
@@ -28,10 +28,12 @@
             <?php
             $baseName = "220817";
             $num_of_photos = 3;
+            echo "<div id='".$baseName."' style='display: none;'>";
             for($i = 1; $i < $num_of_photos+1; $i++){
-                echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">';
-                echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">下载这张jpeg原大小图片</a>';
+                echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
+                echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">查看/下载这张jpeg原大小图片</a>';
             }
+            echo "</div>";
             ?>
 
 
