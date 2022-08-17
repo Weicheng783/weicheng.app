@@ -10,6 +10,26 @@
     </head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
+    <?php
+        function createPostWithPhoto($baseName, $num_of_photos){
+            echo '<button id="'.$baseName.'_expand" class="header_button">展开</button>';
+            echo '<button id="'.$baseName.'_close" class="header_button">收缩</button>';
+            echo "<div id='".$baseName."' style='display: none;'>";
+            for($i = 1; $i < $num_of_photos+1; $i++){
+                echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
+                echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">查看/下载这张jpeg原大小图片</a>';
+            }
+            echo "</div>";
+
+            echo '<script>
+            document.getElementById("'.$baseName.'_expand").addEventListener("click", function(){ document.getElementById("'.$baseName.'").style = "display: flex;"; document.getElementById("'.$baseName.'_expand").style="display: none;"; document.getElementById("'.$baseName.'_close").style=""; } );
+            </script>';
+
+            echo '<script>
+            document.getElementById("'.$baseName.'_close").addEventListener("click", function(){ document.getElementById("'.$baseName.'").style = "display: none;"; document.getElementById("'.$baseName.'_expand").style=";"; document.getElementById("'.$baseName.'_close").style="display: none";} );
+            </script>';
+        }
+    ?>
 
     <body style="background-color: antiquewhite; text-align:center;">
         <div id='header_group' style="display:block; text-align: center;">
@@ -26,24 +46,27 @@
             <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">2022/08/17 晚 Evening</p>
             <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">Tesco的豌豆炒饭加肉😋</p>
             <?php
-            $baseName = "220817";
-            $num_of_photos = 3;
-            echo "<div id='".$baseName."' style='display: none;'>";
-            for($i = 1; $i < $num_of_photos+1; $i++){
-                echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
-                echo '<a class="narrator" href="./images/'.$baseName.'_'.$i.'.jpeg" style="font-size: small; text-align: center; border-radius: auto; background-origin: padding-box;">查看/下载这张jpeg原大小图片</a>';
-            }
-            echo "</div>";
+                createPostWithPhoto("220817", 3);
             ?>
-
-
         </div>
-            
-    </body>
 
+    </body>
 </html>
 
 <script>
+
+var language = 0;
+
+function language_switch(){
+    // Language Codes: 0 English, 1 Simplified Chinese.
+    if(language == 0){
+        language = 1;
+        document.getElementById("follow").innerHTML="看看我的Github空间";
+    }else{
+        language = 0;
+        document.getElementById("follow").innerHTML="Follow Me on Github";
+    }
+}
 
 function fun(){
         var date = new Date()
