@@ -3,8 +3,6 @@
         <link rel="icon" type="image/x-icon" href="./favicon.ico" />
         <meta charset="utf-8">
         <title>Weicheng Space</title>
-        <meta name="author" content="Weicheng Ao">
-        <meta name="revised" content="Weicheng Ao, Canary Edition 2021-12-20">
         <!-- Optimised for mobile users -->
         <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </head>
@@ -13,7 +11,7 @@
     <?php
         function createPostWithPhoto($baseName, $num_of_photos){
             echo '<button id="'.$baseName.'_expand" class="header_button">展开</button>';
-            echo '<button id="'.$baseName.'_close" class="header_button">收缩</button>';
+            echo '<button id="'.$baseName.'_close" style="display: none;" class="header_button">收缩</button>';
             echo "<div id='".$baseName."' style='display: none;'>";
             for($i = 1; $i < $num_of_photos+1; $i++){
                 echo '<img src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
@@ -133,8 +131,8 @@ function fun(){
 
 <style>
     .narrator{
-        animation-name: narrator_enter; 
-        animation-duration:5s;
+        /* animation-name: narrator_enter; 
+        animation-duration:5s; */
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 
