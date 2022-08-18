@@ -37,17 +37,26 @@
             <!-- <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
             <!-- <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
-            <p class="narrator" style="font-size: medium; text-align: center; ">双击照片查看/下载原大小jpeg图 / Double tap photos to gain high quality jpeg pic.</p>
+            <p class="narrator" style="font-size: medium; text-align: center; ">双击照片查看/下载原大小jpeg图</p>
         </div>
 
         <!-- Start Write Blogs -->
         <!-- 01 -->
         <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
-            <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">2022/08/17 晚 Evening</p>
+            <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">2022/08/17 晚</p>
             <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">Tesco的豌豆炒饭加肉😋</p>
             <?php
                 createPostWithPhoto("220817", 3);
             ?>
+        </div>
+
+        <!-- 00 -->
+        <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
+        <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">2022/08/13 晚</p>
+        <p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">校园随拍</p>
+        <?php
+            createPostWithPhoto("220813", 10);
+        ?>
         </div>
 
     </body>
