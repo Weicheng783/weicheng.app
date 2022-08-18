@@ -38,6 +38,7 @@
             <!-- <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
             <p class="narrator" style="font-size: medium; text-align: center; ">双击照片查看/下载原大小jpeg图</p>
+            <button id="follow" class="header_button" onclick="window.location.href='https://weicheng.app'">到主页</button>
         </div>
 
         <!-- Start Write Blogs -->
