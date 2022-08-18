@@ -198,7 +198,7 @@ function fun(){
         /* white-space: nowrap; */
         /* padding: 5px 70px 5px 20px; */
         background: transparent;
-        height: 100%;
+        /* height: 100%; */
         /* border-radius:15px; */
     }
 </style>
