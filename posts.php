@@ -12,7 +12,7 @@
         function createPostWithPhoto($baseName, $num_of_photos){
             echo '<button id="'.$baseName.'_expand" class="header_button">展开/Expand</button>';
             echo '<button id="'.$baseName.'_close" style="display: none;" class="header_button">收缩/Minify</button>';
-            echo "<div id='".$baseName."' style='display: none;'>";
+            echo "<div id='".$baseName."' style='display: none;' class='scroll-container'>";
             for($i = 1; $i < $num_of_photos+1; $i++){
                 echo '<img id="'.$baseName.'_'.$i.'" src="./images/'.$baseName.'_'.$i.' Large.jpeg"  alt="photo not found or unreadable" style=" text-align: left; border-radius:20px; display:flex; height:400px; width:auto;">';
                 echo '<script>document.getElementById("'.$baseName.'_'.$i.'").addEventListener("dblclick", function(){ if(confirm("你双击点按了这张图片，想看看原图么?") == true){window.location.href = "./images/'.$baseName.'_'.$i.'.jpeg";} } );</script>';
@@ -190,5 +190,15 @@ function fun(){
 
     .good{
         text-align: center;    
+    }
+
+    /* HORIZONTAL SCROLL */
+    .scroll-container{
+        overflow: auto;
+        white-space: nowrap;
+        padding: 5px 70px 5px 20px;
+        background: transparent;
+        height: 100%;
+        border-radius:15px;
     }
 </style>
