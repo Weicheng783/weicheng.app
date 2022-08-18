@@ -28,7 +28,7 @@
                 echo '<p class="narrator" style="font-size: large; text-align: center; ">英国夏令时间 BST : <strong id="serverYMD">'.$current_date.'</strong>.</p>';
             ?>
 
-            <p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/posts.php'">看最近的更新和照片 / See Recent Posts with Photos 🙃</button></p>
+            <p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/posts.php'">看看最近的更新和照片🙃</button></p>
 
             
             <!-- <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
