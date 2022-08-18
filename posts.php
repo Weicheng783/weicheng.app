@@ -195,10 +195,10 @@ function fun(){
     /* HORIZONTAL SCROLL */
     .scroll-container{
         overflow: auto;
-        white-space: nowrap;
-        padding: 5px 70px 5px 20px;
+        /* white-space: nowrap; */
+        /* padding: 5px 70px 5px 20px; */
         background: transparent;
         height: 100%;
-        border-radius:15px;
+        /* border-radius:15px; */
     }
 </style>
