@@ -42,12 +42,14 @@
 
             $names = shell_exec('ls /home/stuff/live 2>&1');
 
-            echo $names;
+            $pieces = explode(" ", $names);
 
-            // foreach (array_reverse(glob('/home/ubuntu/weicheng/live/*')) as $filename) {
-            //     $filename = substr($filename);
-            //     echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
-            // }
+            // echo $names;
+
+            foreach (array_reverse($pieces) as $filename) {
+                $filename = substr($filename);
+                echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
+            }
         ?>
 
     </body>
