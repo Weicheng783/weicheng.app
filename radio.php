@@ -42,11 +42,11 @@
 
             $names = shell_exec('ls /home/stuff/live 2>&1');
 
-            $pieces = explode(" ", $names);
+            // $pieces = explode(" ", $names);
 
             // echo $names;
 
-            foreach (array_reverse($pieces) as $filename) {
+            foreach (array_reverse($names) as $filename) {
                 $filename = substr($filename);
                 echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
             }
