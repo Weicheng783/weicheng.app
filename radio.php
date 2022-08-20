@@ -41,7 +41,7 @@
             echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">';
             
             foreach (array_reverse(glob('/home/stuff/live/*')) as $filename) {
-                $filename = substr($filename, 18);
+                $filename = substr($filename, 17);
                 echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
             }
         ?>
