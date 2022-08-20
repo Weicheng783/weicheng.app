@@ -43,7 +43,7 @@
             foreach (array_reverse(glob('/home/stuff/live/*')) as $filename) {
                 $filename = substr($filename, 17);
                 echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
-                echo '<audio controls="controls">
+                echo '<audio controls="controls" preload="none">
                     <source src="https://weicheng.app/live/'.$filename.'" type="audio/mp4" />
                 </audio>';
             }
