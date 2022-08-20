@@ -13,7 +13,7 @@
         <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
         <p class="narrator" style="font-size: medium; text-align: center;">在下方选择你要看的时间段，每段十分钟，文件名为时段起止时间的大致估计。</p>
         <p class="narrator" style="font-size: medium; text-align: center;">仅限内部使用</p>
-        <button class="header_button" onclick="window.location.href='https://weicheng.app'">到大厅页面</button>
+        <p class="narrator" style="font-size: medium; text-align: center;"><button class="header_button" onclick="window.location.href='https://weicheng.app'">到大厅页面</button></p>
 
 
 
