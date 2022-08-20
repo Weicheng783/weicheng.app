@@ -44,10 +44,10 @@
 
             echo $names;
 
-            foreach (array_reverse(glob('/home/ubuntu/weicheng/live/*')) as $filename) {
-                $filename = substr($filename);
-                echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
-            }
+            // foreach (array_reverse(glob('/home/ubuntu/weicheng/live/*')) as $filename) {
+            //     $filename = substr($filename);
+            //     echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
+            // }
         ?>
 
     </body>
