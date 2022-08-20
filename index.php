@@ -27,7 +27,7 @@
                 $current_date = date('Y/m/d H:i:s');
                 echo '<p class="narrator" style="font-size: large; text-align: center; ">英国夏令时间 BST : <strong id="serverYMD">'.$current_date.'</strong>.</p>';
                 $total_count = shell_exec("git rev-list --all --count 2>&1");
-                echo '<p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">总版本迭代号: <strong>'.$total_count.'</strong></p>';
+                echo '<p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">总版本迭代号: <strong>#'.$total_count.'</strong></p>';
             ?>
 
             <p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/posts.php'">看看最近的更新和照片🙃</button></p>
