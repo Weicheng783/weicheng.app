@@ -39,9 +39,9 @@
 
             echo '<p class="narrator" style="font-size: medium; text-align: center;">服务器磁盘空间使用情况：已用 '.$du_symbol.' / 总共 '.$ds_symbol.'. 当可用磁盘空间小于一定数值时，前期Audio会被删除。</p>';
             echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">';
-
+            
             foreach (array_reverse(glob('/home/stuff/live/*')) as $filename) {
-                // $filename = substr($filename);
+                $filename = substr($filename, 18);
                 echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
             }
         ?>
