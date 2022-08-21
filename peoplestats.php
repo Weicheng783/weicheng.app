@@ -60,7 +60,7 @@
             echo '<p class="narrator" style="font-size: x-large; text-align: center;">目前还没有人访问网站的任何网页。</p>';
         }else{
             for($i = 0; $i < $row_count; $i++){
-                echo '<p class="narrator" style="font-size: large; text-align: center; color: purple;"> ID: ' . $rows[$i]['id'] . " Address: " . $rows[$i]['address'] . " NOTE: " . $rows[$i]['note'] . " Status: " . $rows[$i]['status'] . " First Visit Time: " . $rows[$i]['firsttime'] . "</p>";
+                echo '<p class="narrator" style="font-size: large; text-align: center; color: purple;"> ID: ' . $rows[$i]['id'] . "/ Address: " . $rows[$i]['address'] . "/ NOTE: " . $rows[$i]['note'] . "/ Status: " . $rows[$i]['status'] . "/ First Visit Time: " . $rows[$i]['firsttime'] . "</p>";
             }
         }
 
@@ -76,7 +76,7 @@
             echo '<p class="narrator" style="font-size: x-large; text-align: center;">目前还没有人访问网站的任何网页。</p>';
         }else{
             for($i = 0; $i < $row_count; $i++){
-                echo '<p class="narrator" style="font-size: large; text-align: center; color: purple;"> ID: ' . $rows[$i]['id'] . " Client ID: " . $rows[$i]['client_id'] . " Connected Time: " . $rows[$i]['datetime'] . " Which Page: " . $rows[$i]['webpage'] . " Note: " . $rows[$i]['note'] . "</p>";
+                echo '<p class="narrator" style="font-size: large; text-align: center; color: purple;"> ID: ' . $rows[$i]['id'] . "/ Client ID: " . $rows[$i]['client_id'] . "/ Connected Time: " . $rows[$i]['datetime'] . "/ Which Page: " . $rows[$i]['webpage'] . "/ User Agent: " . $rows[$i]['user_agent'] . "/ Note: " . $rows[$i]['note'] . "</p>";
             }
         }
 
