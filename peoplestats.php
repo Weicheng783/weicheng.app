@@ -18,7 +18,7 @@
 
         $pdo->query($sql);
         $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-        echo "<h3 style='text-align:center; color:green;'>Database Connected.</h3>";
+        echo "<h3 style='text-align:center; color:green;'>Database Connected. Server Time is UTC +0.</h3>";
 
         // We update the pdo to allow us login the specified database
         $pdo=new PDO($GLOBALS['dsn']."; dbname=peoplestats",$GLOBALS['user'], $GLOBALS['password']);

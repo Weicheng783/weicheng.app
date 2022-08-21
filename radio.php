@@ -86,6 +86,7 @@
             $row_count = $stmt->rowCount();
             $rows = $stmt->fetchAll();
             $client_id = $rows[0]['id'];
+            echo $client_id;
 
             if(isset($client_id) and $client_id != NULL){
                 $sql = "INSERT INTO `connection_info` (`client_id`, `address`, `webpage`, `user_agent`) VALUES ('".$client_id."' ,'".$addr."', '".$webpage."', '".$ua."');";
