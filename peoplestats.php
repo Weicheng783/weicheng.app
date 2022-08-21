@@ -7,7 +7,7 @@
     // Data Base Preparatory Work
     $user="test";
     $password="test";
-    $dsn="mysql:host=138.2.47.121; port=3306";
+    $dsn="mysql:host=localhost; port=3306";
 
     $pdo=new PDO($GLOBALS['dsn'],$GLOBALS['user'], $GLOBALS['password']);
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
