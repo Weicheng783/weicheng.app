@@ -14,6 +14,8 @@
 
     try{
         $sql = "CREATE DATABASE IF NOT EXISTS peoplestats";
+        echo "<h3 style='text-align:center; color:orange;'>Database Connecting.</h3>";
+
         $pdo->query($sql);
         $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         echo "<h3 style='text-align:center; color:green;'>Database Connected.</h3>";
