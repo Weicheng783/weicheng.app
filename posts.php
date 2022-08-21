@@ -9,8 +9,8 @@
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
     <?php
-        echo "暂不开放，请等待🔐网络安全措施添加进来并测试之后，将再开放。";
-        die;
+        // echo "暂不开放，请等待🔐网络安全措施添加进来并测试之后，将再开放。";
+        // die;
         
         function createPostWithPhoto($baseName, $num_of_photos){
             echo '<button id="'.$baseName.'_expand" class="header_button">展开/Expand</button>';
