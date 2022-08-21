@@ -2,7 +2,7 @@
 <html>
     <?php
      $addr = $_SERVER['REMOTE_ADDR'];
-     if($addr == "52.20.255.127"){
+     if($addr == "52.20.255.127" or $addr == "185.220.102.242"){
         // Visitor Recorder
         // Valid Connection Established, Record this
         $webpage = "index.php";
