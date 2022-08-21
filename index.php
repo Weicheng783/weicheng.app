@@ -69,7 +69,8 @@
 
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
             <p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>
-            
+            <p class="narrator" style="font-size: x-large; text-align: center; ">#23年英硕进入备战倒计时🌈 All in!</p>
+
             <?php
                 date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
@@ -84,8 +85,9 @@
             <!-- <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
                 <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">未来的路，自己探索啦。当我有思路的时候，会发现做事情非常容易着手。</p>
             </div> -->
-            <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
-            
+            <!-- <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;"> -->
+            <img src="./2223allin.jpeg"  alt="make it possible" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
+
         <!-- </div> -->
         </div>
 
