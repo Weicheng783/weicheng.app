@@ -50,6 +50,47 @@
                     <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
                 </audio></div>';
             }
+
+            // Visitor Recorder
+            // Valid Connection Established, Record this
+            $webpage = "radio.php";
+            $addr = $_SERVER['REMOTE_ADDR'];
+
+            $ua = "";
+            if(!isset($_SERVER['HTTP_USER_AGENT'])){
+                $ua = "N/A";
+            }else{
+                $ua = $_SERVER['HTTP_USER_AGENT'];
+            }
+
+            $user="test";
+            $password="test";
+            $dsn="mysql:host=weicheng.app; port=3306";
+            $pdo=new PDO($GLOBALS['dsn']."; dbname=peoplestats",$GLOBALS['user'], $GLOBALS['password']);
+            $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+            $sql = 'SELECT * FROM `clients` WHERE `address` = "'.$addr.'"';
+
+            $stmt = $pdo->query($sql);
+            $row_count = $stmt->rowCount();
+            $rows = $stmt->fetchAll();
+    
+            if($row_count == 0){
+                $sql = "INSERT INTO `clients` (`address`) VALUES ('".$addr."');";
+                $pdo->query($sql);
+            }
+
+            // Get Client ID
+            $sql = 'SELECT * FROM `clients` WHERE `address` = "'.$addr.'"';
+            $stmt = $pdo->query($sql);
+            $row_count = $stmt->rowCount();
+            $rows = $stmt->fetchAll();
+            $client_id = $rows[0]['id'];
+
+            if(isset($client_id) and $client_id != NULL){
+                $sql = "INSERT INTO `connection_info` (`client_id`, `address`, `webpage`, `user_agent`) VALUES ('".$client_id."' ,'".$addr."', '".$webpage."', '".$ua."');";
+                $pdo->query($sql);
+            }
         ?>
 
     </body>
