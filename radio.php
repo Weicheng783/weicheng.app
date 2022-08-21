@@ -65,7 +65,7 @@
 
             $user="test";
             $password="test";
-            $dsn="mysql:host=weicheng.app; port=3306";
+            $dsn="mysql:host=localhost; port=3306";
             $pdo=new PDO($GLOBALS['dsn']."; dbname=peoplestats",$GLOBALS['user'], $GLOBALS['password']);
             $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
