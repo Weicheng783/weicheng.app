@@ -46,12 +46,13 @@
             
             $count = 0;
             foreach (array_reverse(glob('/home/stuff/live/*')) as $filename) {
-                if(count < 144){
+                if($count < 144){
                     $filename = substr($filename, 17);
                     echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
                     echo '<div style="text-align:center;"><audio controls="controls" preload="none">
                         <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
                     </audio></div>';
+                    $count ++;
                 }
             }
 
