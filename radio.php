@@ -10,6 +10,7 @@
         <div id='header_group' style="display:block; text-align: center;"></div>
 
         <p class="narrator" style="font-size: x-large; text-align: center;">BBC Radio Manchester -- Radio [Canary Internal Release 220820]</p>
+        <p class="narrator" style="font-size: x-large; text-align: center;">220822 Update: Only Display Recent 144 radio files (about one day), this is a temporary fix.</p>
         <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
         <p class="narrator" style="font-size: medium; text-align: center;">在下方选择你要看的时间段，每段十分钟，文件名为时段起止时间的大致估计。</p>
         <p class="narrator" style="font-size: medium; text-align: center;">仅限内部使用</p>
@@ -43,12 +44,15 @@
             echo '<p class="narrator" style="font-size: medium; text-align: center;">服务器磁盘空间使用情况：已用 '.$du_symbol.' / 总共 '.$ds_symbol.'. 当可用磁盘空间小于一定数值时，前期Audio会被删除。</p>';
             echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">';
             
+            $count = 0;
             foreach (array_reverse(glob('/home/stuff/live/*')) as $filename) {
-                $filename = substr($filename, 17);
-                echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
-                echo '<div style="text-align:center;"><audio controls="controls" preload="none">
-                    <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
-                </audio></div>';
+                if(count < 144){
+                    $filename = substr($filename, 17);
+                    echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
+                    echo '<div style="text-align:center;"><audio controls="controls" preload="none">
+                        <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
+                    </audio></div>';
+                }
             }
 
             // Visitor Recorder
