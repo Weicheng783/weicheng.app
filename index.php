@@ -45,11 +45,12 @@
             $pdo->query($sql);
         }
 
+        http_response_code(403);
         header('HTTP/1.0 403 Forbidden');
         echo '403 Forbidden [This page will add security addons that requires sign-in feature soon, no bot detection, this visit has been recorded for investigation purpose, if you are a friend of mine, please contact me.]';
 
         // echo "<script>alert('Your IP Address has been blacklisted, this visit has been recorded for investigating purpose, if you are a friend of mine, please contact me.');</script>";
-        die;
+        die('403 Forbidden');
     //  }
     ?>
 
