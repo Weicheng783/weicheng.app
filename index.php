@@ -1,8 +1,9 @@
 
 <html>
     <?php
+
      $addr = $_SERVER['REMOTE_ADDR'];
-     if($addr == "52.20.255.127" or $addr == "185.220.102.242"){
+    //  if($addr == "52.20.255.127" or $addr == "185.220.102.242"){
         // Visitor Recorder
         // Valid Connection Established, Record this
         $webpage = "index.php";
@@ -43,9 +44,13 @@
             $sql = "INSERT INTO `connection_info` (`client_id`, `webpage`, `user_agent`) VALUES ('".$client_id."' , '".$webpage."', '".$ua."');";
             $pdo->query($sql);
         }
-        echo "<script>alert('Your IP Address has been blacklisted, this visit has been recorded for investigating purpose, if you are a friend of mine, please contact me.');</script>";
+
+        header('HTTP/1.0 403 Forbidden');
+        echo '403 Forbidden [This page will add security addons that requires sign-in feature soon, no bot detection, this visit has been recorded for investigation purpose, if you are a friend of mine, please contact me.]';
+
+        // echo "<script>alert('Your IP Address has been blacklisted, this visit has been recorded for investigating purpose, if you are a friend of mine, please contact me.');</script>";
         die;
-     }
+    //  }
     ?>
 
     <head>
