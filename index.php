@@ -41,7 +41,7 @@
         $client_id = $rows[0]['id'];
 
         if(isset($client_id) and $client_id != NULL){
-            $sql = "INSERT INTO `connection_info` (`client_id`, `webpage`, `user_agent`) VALUES ('".$client_id."' , '".$webpage."', '".$ua."');";
+            $sql = "INSERT INTO `connection_info` (`client_id`, `webpage`, `user_agent`) VALUES ('".$client_id."' , '".$webpage." [Forbidden] ', '".$ua."');";
             $pdo->query($sql);
         }
 
