@@ -262,5 +262,6 @@ function fun(){
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: 25px;
         text-align: center;
+        border-radius: 10px;
     }
 </style>
