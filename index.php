@@ -22,9 +22,9 @@
             <?php
                 if(!isset($_COOKIE['user']) or $_COOKIE['user'] == null or $_COOKIE['user'] == ""){
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">站点已经启用单点登录认证(Single Sign-On)，请知悉。</p>';
-                    echo '<form action="login.php" method="post" style="display:center;">
-                            <p class="narrator" style="font-size: medium; text-align: center; ">用户: <input name="name" class="narrator" style="font-size: medium; text-align: center; "></input></p>
-                            <p class="narrator" style="font-size: medium; text-align: center; ">密码: <input type="password" name="password"></input></p>
+                    echo '<form action="login.php" method="post" style="display:center; font-size: large;">
+                            <p class="narrator" style="font-size: medium; text-align: center; ">用户: <input name="name" class="narrator" ></input></p>
+                            <p class="narrator" style="font-size: medium; text-align: center; ">密码: <input type="password" name="password" ></input></p>
                             <p class="narrator" style="font-size: medium; text-align: center; "><button type="submit" class="header_button" onclick="">进入</button></p>
                             </form>';
                     echo '<button class="header_button" onclick="location.href=\'signin.php\';">重置密码/注册</button>';
