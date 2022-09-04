@@ -1,138 +1,75 @@
-
 <html>
-    <?php
-
-     $addr = $_SERVER['REMOTE_ADDR'];
-    //  if($addr == "52.20.255.127" or $addr == "185.220.102.242"){
-        // Visitor Recorder
-        // Valid Connection Established, Record this
-        $webpage = "index.php";
-        $addr = $_SERVER['REMOTE_ADDR'];
-
-        $ua = "";
-        if(!isset($_SERVER['HTTP_USER_AGENT'])){
-            $ua = "N/A";
-        }else{
-            $ua = $_SERVER['HTTP_USER_AGENT'];
-        }
-
-        $user="test";
-        $password="test";
-        $dsn="mysql:host=localhost; port=3306";
-        $pdo=new PDO($GLOBALS['dsn']."; dbname=peoplestats",$GLOBALS['user'], $GLOBALS['password']);
-        $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-        $sql = 'SELECT * FROM `clients` WHERE `address` = "'.$addr.'"';
-
-        $stmt = $pdo->query($sql);
-        $row_count = $stmt->rowCount();
-        $rows = $stmt->fetchAll();
-
-        if($row_count == 0){
-            $sql = "INSERT INTO `clients` (`address`) VALUES ('".$addr."');";
-            $pdo->query($sql);
-        }
-
-        // Get Client ID
-        $sql = 'SELECT * FROM `clients` WHERE `address` = "'.$addr.'"';
-        $stmt = $pdo->query($sql);
-        $row_count = $stmt->rowCount();
-        $rows = $stmt->fetchAll();
-        $client_id = $rows[0]['id'];
-
-        if(isset($client_id) and $client_id != NULL){
-            $sql = "INSERT INTO `connection_info` (`client_id`, `webpage`, `user_agent`) VALUES ('".$client_id."' , '".$webpage." [Forbidden] ', '".$ua."');";
-            $pdo->query($sql);
-        }
-
-        http_response_code(403);
-        header('HTTP/1.0 403 Forbidden');
-        echo '403 Forbidden [This page will add security addons that requires sign-in feature soon, no bot detection, this visit has been recorded for investigation purpose, if you are a friend of mine, please contact me.]';
-
-        // echo "<script>alert('Your IP Address has been blacklisted, this visit has been recorded for investigating purpose, if you are a friend of mine, please contact me.');</script>";
-        die('403 Forbidden');
-    //  }
-    ?>
-
     <head>
         <link rel="icon" type="image/x-icon" href="./favicon.ico" />
         <meta charset="utf-8">
-        <title>Weicheng Space</title>
-        <meta name="author" content="Weicheng Ao">
-        <meta name="revised" content="Weicheng Ao, Canary Edition 2021-12-20">
+        <title>Weicheng Space 2022</title>
         <!-- Optimised for mobile users -->
         <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
-
     <body style="background-color: antiquewhite;">
         <div id='header_group' style="display:block; text-align: center;">
-        <!-- <div style="display: inline-flex;"> -->
-            <img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
-            <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
-            <!-- <img src="./weicheng_avatar.jpeg" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;"> -->
-
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
-            <p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>
-            <p class="narrator" style="font-size: x-large; text-align: center; ">#23年英硕进入备战倒计时🌈 All in!</p>
+            <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
 
             <?php
                 date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
-                echo '<p class="narrator" style="font-size: large; text-align: center; ">英国夏令时间 BST : <strong id="serverYMD">'.$current_date.'</strong>.</p>';
-                $total_count = shell_exec("git rev-list --all --count 2>&1");
-                echo '<p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">总版本迭代号: <strong>#'.$total_count.'</strong></p>';
+                echo '<p class="narrator" style="font-size: large; text-align: center; ">英国时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
             ?>
 
-            <p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/posts.php'">看看最近的更新和照片🙃</button></p>
+            <?php
+                if(!isset($_COOKIE['user']) or $_COOKIE['user'] == null or $_COOKIE['user'] == ""){
+                    echo '<p class="narrator" style="font-size: medium; text-align: center; ">站点已经启用单点登录认证(Single Sign-On)，请知悉。</p>';
+                    echo '<form action="login.php" method="post" style="display:center;">
+                            <p>用户: <input name="name" class="input_font"></input></p>
+                            <p>密码: <input type="password" name="password" class="input_font"></input></p>
+                            <button type="submit" class="header_button" onclick="">进入</button>
+                            </form>';
+                    echo '<button class="header_button" onclick="location.href=\'signin.php\';">重置密码/注册</button>';
 
+                }else{
+                    echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
+                    <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">';
+
+                    echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['user'].'</strong>，你好。</p>';
+
+                    echo '<p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>';
+                    echo '<p class="narrator" style="font-size: x-large; text-align: center; ">#23年英硕进入备战倒计时🌈 All in!</p>';
+
+                    $total_count = shell_exec("git rev-list --all --count 2>&1");
+                    echo '<p class="narrator" style="font-size: medium; text-align: center; border-radius: auto; background-origin: padding-box;">总版本迭代号: <strong>#'.$total_count.'</strong></p>';
+
+                    echo '<p><button id="cv" class="header_button" onclick="window.location.href=\'https://weicheng.app/cv.pdf\'">CV / RESUME / 个人简历</button></p>';
+                    echo '<p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href=\'https://weicheng.app/posts.php\'">看看最近的更新和照片🙃</button></p>';
+                    echo '<img src="./2223allin.jpeg"  alt="make it possible" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">';
+    
+
+                    // Source Control Information Display
+                    $gitweb = "https://github.com/Weicheng783/weicheng.app/";
             
-            <!-- <div class="narrator" style="text-align:center; border-style:dashed; border-width:3px; border-radius:5px; width:80%; display:inline-block; padding: 5px; margin-bottom: 20px;">
-                <p class="narrator" style="font-size: x-large; text-align: center; border-radius: auto; background-origin: padding-box;">未来的路，自己探索啦。当我有思路的时候，会发现做事情非常容易着手。</p>
-            </div> -->
-            <!-- <img src="./today.JPG"  alt="Let us do it!" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;"> -->
-            <img src="./2223allin.jpeg"  alt="make it possible" style=" text-align: left; border-radius:20px; display:inline-block; height:auto; width:80%;">
+                    $branch_name = shell_exec('git branch --show-current 2>&1');
+                    $hash = shell_exec('git rev-parse --short HEAD 2>&1');
+                    $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
+                    $last_updated_time = shell_exec('git log -1 --format=%cd 2>&1');
+                    $git_author = shell_exec("git log -1 --pretty=format:'%an (%ae)' 2>&1");
+            
+                    echo '<hr/>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo currently private. ⚠️本代码仓库暂不对外开放。</p>';
+            
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Source Code Management / 代码管理]</p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">作者(Author): <strong>'.$git_author.'</strong></p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <a href="'.$gitweb.'commit/'.$hash.'"><strong>'.$hash.'</strong></a></p>';
+                    echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前分支(current branch): <a href="'.$gitweb.'tree/'.$branch_name.'"><strong>'.$branch_name.'</strong></a></p>';
 
-        <!-- </div> -->
+                }
+            ?>
         </div>
-
     </body>
-
-    <?php
-        $gitweb = "https://github.com/Weicheng783/weicheng.app/";
-
-        $branch_name = shell_exec('git branch --show-current 2>&1');
-        $hash = shell_exec('git rev-parse --short HEAD 2>&1');
-        $commit_msg = shell_exec('git log -1 --pretty=format:%B 2>&1');
-        $last_updated_time = shell_exec('git log -1 --format=%cd 2>&1');
-        $git_author = shell_exec("git log -1 --pretty=format:'%an (%ae)' 2>&1");
-
-        echo '<hr/>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">⚠️Repo currently private. ⚠️本代码仓库暂不对外开放。</p>';
-
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">☞ [Source Code Management / 代码管理]</p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">最近一次更新(last updated time): <strong>'.$last_updated_time.'</strong></p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">更新日志(commit message): <strong>'.$commit_msg.'</strong></p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">作者(Author): <strong>'.$git_author.'</strong></p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前版本哈希值(current commit hash): <a href="'.$gitweb.'commit/'.$hash.'"><strong>'.$hash.'</strong></a></p>';
-        echo '<p class="narrator" style="font-size: large; text-align: center; border-radius: auto; background-origin: padding-box;">当前分支(current branch): <a href="'.$gitweb.'tree/'.$branch_name.'"><strong>'.$branch_name.'</strong></a></p>';
-    ?>
-
-    <div id='language_switch' style="display:block; text-align:center;">
-        <!-- <button class="header_button" style="text-align: right;" onclick="language_switch()">English/简体中文</button> -->
-        <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button>
-        <p><button id="cv" class="header_button" onclick="window.location.href='https://weicheng.app/cv.pdf'">CV / RESUME / 个人简历</button></p>
-        <!-- <button id="diary_divert" class="header_button" onclick="diary_public_notice(); window.location.href='https://weicheng.app/diary_public'">Diary Demo / 个人日记系统展示</button> -->
-    </div>
-
-
-    <footer style="text-align: center;">
-        <p>Open-sourced website under MIT license. See <a href="https://opensource.org/licenses/MIT/">license website</a> and <a href="./LICENSE.md">license information</a> for more details.</p>
-    </footer>
-
 </html>
-
 
 <?php
     // Visitor Recorder
@@ -182,17 +119,11 @@
 
 function serverTime(){
         var st = new Date(document.getElementById("serverYMD").innerHTML);
-        // console.log(document.getElementById("serverYMD").innerHTML);
         st = new Date(st.setSeconds(st.getSeconds() + 1));
 
         document.getElementById("serverYMD").innerHTML = st.getFullYear() + "/" + (st.getMonth()+1) + "/" + st.getDate() + " " + st.getHours() + ":" + st.getMinutes() + ":" + st.getSeconds();
         setTimeout("serverTime()",1000);
 }
-
-// function diary_public_notice(){
-//     alert("Welcome to diary system, this is a replicate for the lastest update in line with the actual used version, please visit diary_public for more info. ⚠️Please notice, we use cookies to store state information, thus you need to sign-out manually. NOTICE: ⚠️ Server-Side Configuration Part & username & password: 'test' ");
-//     alert("欢迎来到日记系统，即将展示的版本是当前最新更新的复刻版，功能与我正在使用的私人日记系统保持一致，代码库请参见diary_public。请注意⚠️：该系统使用cookies来保存登录信息，不会自动退出，需要手动退出登录。⚠️服务器配置：更改‘用户’和‘密码’均为test，日记本登录账户密码均为：test。");
-// }
 
 var language = 0;
 
