@@ -35,7 +35,7 @@
                     echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
                     <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">';
 
-                    echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['user'].'</strong>，你好。</p>';
+                    echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['name'].'</strong>，你好。</p>';
                     echo '<button class="header_button" onclick="location.href=\'out.php\';">退出登录</button>';
 
                     echo '<p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>';
