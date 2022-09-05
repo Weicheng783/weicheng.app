@@ -84,7 +84,7 @@
                     $re = $pdo->query("SELECT * FROM user WHERE name='".$_COOKIE['name']."';");
                     $rows = $re->fetchAll();
                     if($rows == null){
-                        echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户不存在，准备发送申请请求，正在检查是否超过每日重发次数，新用户注册每日单ip地址最多可重试5次</p>';
+                        echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户不存在，准备发送申请请求</p>';
                         // $re = $pdo->query("SELECT * FROM request WHERE ip=".$_SERVER['REMOTE_ADDR'].";");
                         // $row_count = $stmt->rowCount();
 
@@ -95,10 +95,11 @@
                             // echo '<p class="narrator" style="font-size: medium; text-align: center; ">这是今日第 '.$row_count.' 次请求, 共5次。</p>';
 
                             // SENDING LOGIC
-                            $strstr = "echo \"TA正在尝试注册用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", TA是今日尝试注册。产生点字符串来庆祝一下：".random_str(50)." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app注册请求审核\" weicheng.ao@student.manchester.ac.uk";
+                            $pwd = random_str(12);
+                            $strstr = "echo \"TA正在尝试注册用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", 密码生成为：".$pwd." , 验证链接为：https://weicheng.app/approval.php?email=".$_REQUEST['email']."&password=".$pwd."   <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app注册请求审核\" weicheng.ao@student.manchester.ac.uk";
                             $result_str = shell_exec($strstr);
 
-                            $pdo->query("INSERT INTO `request` (`name`, `email`, `password`, `ip`) VALUES ('".random_str(10)."', '".random_str(10)."', '".random_str(10)."', '".$_SERVER['REMOTE_ADDR']."')");
+                            $pdo->query("INSERT INTO `request` (`name`, `email`, `password`, `ip`, `note`) VALUES ('".$_REQUEST['name']."', '".$_REQUEST['email']."', '".$pwd."', '".$_SERVER['REMOTE_ADDR']."', '".$_REQUEST['note']."')");
                             echo '<p class="narrator" style="font-size: medium; text-align: center; ">✅请求已发出，请等待管理员检查，时常检查垃圾邮箱的收信情况，你现在可以退出了。</p>';
 
                         // }
@@ -110,7 +111,7 @@
                             echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户名、邮箱号与已知记录一致，正在检查是否超过每日重发次数，每日每用户最多可重试5次</p>';
                             // $re = $pdo->query("SELECT * FROM request WHERE name='".$_SERVER['name']."';");
                             // $row_count = $stmt->rowCount();
-    
+
                             // if($row_count >= 5){
                             //     echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌请求数量过多，请明天再试。</p>';
                             // }else{

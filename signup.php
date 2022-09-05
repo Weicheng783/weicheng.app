@@ -26,7 +26,7 @@
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">在下面输入昵称(登录用户名)，邮箱号，备注。已注册用户自动发送新密码到邮箱，未注册用户会先发邮件给管理员验证通过后再得到新密码，如果一直没收到，请检查垃圾邮件。</p>';
                     echo '<form action="signform.php" method="post" style="display:center;">
                             <p>登录用户名: <input name="name" class="input_font"></input></p>
-                            <p>邮箱(用于重置密码): <input name="password" class="input_font"></input></p>
+                            <p>邮箱(用于重置密码): <input name="email" class="input_font"></input></p>
                             <p>要和我说的话/备注: <input name="note" class="input_font"></input></p>
                             <p><button type="submit" class="header_button" onclick="">确认</button></p>
                             </form>';
