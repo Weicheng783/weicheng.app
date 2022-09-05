@@ -18,9 +18,7 @@
                 date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
                 echo '<p class="narrator" style="font-size: large; text-align: center; ">英国时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
-            ?>
 
-            <?php
                 try{
                     // We update the pdo to allow us login the specified database
                     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
