@@ -23,25 +23,24 @@
                     // We update the pdo to allow us login the specified database
                     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
                     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-                    echo '<p class="narrator" style="font-size: medium; text-align: center; ">here。</p>';
 
-                    // $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
-                    $re = $pdo->$query("SELECT * FROM user");
+                    $sql = 'SELECT * FROM `request` WHERE `email` = "'.htmlspecialchars($_GET['email']).'" AND `password` = "'.htmlspecialchars($_GET['password']).'";';
+                    $re = $pdo->$query($sql);
 
                     $rows = $re->fetchAll();
                     if($rows == null){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
                     }else{
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">验证下列信息是否可以通过</p>';
-                        // echo '<form action="approved.php" method="post" style="display:center;">
-                        //     <p>登录用户名: <input name="name" class="input_font" value="'.$rows[0]['name'].'"></input></p>
-                        //     <p>邮箱(用于重置密码): <input name="email" class="input_font" value="'.$rows[0]['email'].'"></input></p>
-                        //     <p>备注: <input name="note" class="input_font" value="'.$rows[0]['note'].'"></input></p>
-                        //     <p>密码明文: <input name="password" class="input_font" value="'.$rows[0]['password'].'"></input></p>
-                        //     <p><button type="submit" class="header_button" onclick="" name="ok" value="yes">✅通过</button></p>
-                        //     <p>驳回理由: <input name="cause" class="input_font" ></input></p>
-                        //     <p><button type="submit" class="header_button" onclick="" name="ok" value="no">❌拒绝请求</button></p>
-                        //     </form>';
+                        echo '<form action="approved.php" method="post" style="display:center;">
+                            <p>登录用户名: <input name="name" class="input_font" value="'.$rows[0]['name'].'"></input></p>
+                            <p>邮箱(用于重置密码): <input name="email" class="input_font" value="'.$rows[0]['email'].'"></input></p>
+                            <p>备注: <input name="note" class="input_font" value="'.$rows[0]['note'].'"></input></p>
+                            <p>密码明文: <input name="password" class="input_font" value="'.$rows[0]['password'].'"></input></p>
+                            <p><button type="submit" class="header_button" onclick="" name="ok" value="yes">✅通过</button></p>
+                            <p>驳回理由: <input name="cause" class="input_font" ></input></p>
+                            <p><button type="submit" class="header_button" onclick="" name="ok" value="no">❌拒绝请求</button></p>
+                            </form>';
                     }
                 }catch(PDOException $e){
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">🔴数据库离线。</p>';
