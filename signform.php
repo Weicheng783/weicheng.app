@@ -81,7 +81,7 @@
                     echo "<h3 style='text-align:center; color:green;'>数据库连接正常</h3>";
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">信息录入流程开始，正在检查用户名是否存在</p>';
 
-                    $re = $pdo->query("SELECT * FROM user WHERE name='".$_COOKIE['name']."' AND datetime >= CURDATE();");
+                    $re = $pdo->query("SELECT * FROM user WHERE name='".$_COOKIE['name']."';");
                     $rows = $re->fetchAll();
                     if($rows == null){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户不存在，准备发送申请请求，正在检查是否超过每日重发次数，新用户注册每日单ip地址最多可重试5次</p>';
