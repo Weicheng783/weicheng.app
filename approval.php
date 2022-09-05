@@ -26,7 +26,8 @@
                     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
                     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-                    $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
+                    // $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
+                    $re = $pdo->$query("SELECT * FROM request;");
                     $rows = $re->fetchAll();
                     if($rows == NULL){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
