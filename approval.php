@@ -26,9 +26,10 @@
 
                     // $sql = 'SELECT * FROM `request` WHERE `email` = "'.htmlspecialchars($_GET['email']).'" AND `password` = "'.htmlspecialchars($_GET['password']).'";';
                     // $sql = 'SELECT * FROM `user`';
-                    $sql = "SELECT * FROM user;";
-                    $re = $pdo->$query($sql);
+                    $sql = "SELECT * FROM user ;";
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">here。</p>';
+
+                    $re = $pdo->$query($sql);
 
                     $rows = $re->fetchAll();
                     if($rows == null){
