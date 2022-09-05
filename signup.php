@@ -39,7 +39,7 @@
                     echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['name'].'</strong>，你已经登录了，如需得到新密码，请在下方确认信息重置。</p>';
                     echo '<form action="signform.php" method="post" style="display:center;">
                         <p>登录用户名[必填]: <input name="name" class="input_font" value="'.$_COOKIE['name'].'"></input></p>
-                        <p>邮箱(用于重置密码)/(你的注册邮箱)[必填]: <input name="email" class="input_font" value="'.$_COOKIE['password'].'"></input></p>
+                        <p>邮箱(用于重置密码)/(你的注册邮箱)[必填]: <input name="email" class="input_font" value="'.$_COOKIE['email'].'"></input></p>
                         <p>要和我说的话/备注[可不填]: <input name="note" class="input_font"></input></p>
                         <p><button type="submit" class="header_button" onclick="">确认请求/确认重置密码</button></p>
                         </form>';

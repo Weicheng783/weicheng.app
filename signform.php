@@ -107,7 +107,7 @@
                     }else{
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户存在，正在检查邮箱号与已知记录是否一致</p>';
 
-                        if($_COOKIE['email'] === $rows[0]['email']){
+                        if($_REQUEST['email'] === $rows[0]['email']){
                             echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户名、邮箱号与已知记录一致</p>';
                             // $re = $pdo->query("SELECT * FROM request WHERE name='".$_SERVER['name']."';");
                             // $row_count = $stmt->rowCount();
