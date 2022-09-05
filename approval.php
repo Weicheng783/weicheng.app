@@ -29,6 +29,7 @@
                     // $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
                     $re = $pdo->$query("SELECT * FROM request");
                     $rows = $re->fetchAll();
+                    echo $rows;
                     if($rows == NULL){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
                     }else{
