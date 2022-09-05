@@ -30,7 +30,6 @@
                             <p>要和我说的话/备注: <input name="note" class="input_font"></input></p>
                             <p><button type="submit" class="header_button" onclick="">确认</button></p>
                             </form>';
-                    echo '<button class="header_button" onclick="location.href=\'signin.php\';">重置密码/注册</button>';
 
                 }else{
                     echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
