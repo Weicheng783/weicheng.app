@@ -95,7 +95,7 @@
                             // echo '<p class="narrator" style="font-size: medium; text-align: center; ">这是今日第 '.$row_count.' 次请求, 共5次。</p>';
 
                             // SENDING LOGIC
-                            $strstr = "echo \"TA正在尝试注册用户名：".$_COOKIE['name'].", 邮箱号为：".$_COOKIE['email'].", 想和你说的话是：".$_COOKIE['note'].", TA是今日尝试注册。产生点字符串来庆祝一下：".random_str(50)." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app注册请求审核\" weicheng.app@student.manchester.ac.uk";
+                            $strstr = "echo \"TA正在尝试注册用户名：".$_COOKIE['name'].", 邮箱号为：".$_COOKIE['email'].", 想和你说的话是：".$_COOKIE['note'].", TA是今日尝试注册。产生点字符串来庆祝一下：".random_str(50)." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app注册请求审核\" weicheng.ao@student.manchester.ac.uk";
                             $result_str = shell_exec($strstr);
 
                             $pdo->query("INSERT INTO `request` (`name`, `email`, `password`, `ip`) VALUES ('".random_str(10)."', '".random_str(10)."', '".random_str(10)."', '".$_SERVER['REMOTE_ADDR']."')");
@@ -119,7 +119,7 @@
     
                                 // SENDING LOGIC
                                 $genpwd = random_str(12);
-                                $strstr = "echo \"TA正在尝试更改用户名：".$_COOKIE['name'].", 邮箱号为：".$_COOKIE['email'].", 想和你说的话是：".$_COOKIE['note'].", TA是今日第 ".$row_count." 次更改。TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.app@student.manchester.ac.uk";
+                                $strstr = "echo \"TA正在尝试更改用户名：".$_COOKIE['name'].", 邮箱号为：".$_COOKIE['email'].", 想和你说的话是：".$_COOKIE['note'].", TA是今日第 ".$row_count." 次更改。TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.ao@student.manchester.ac.uk";
                                 $strstr = "echo \"你正在尝试更改用户名：".$_COOKIE['name'].", 邮箱号为：".$_COOKIE['email'].", 想和管理员说的话是：".$_COOKIE['note'].", 你是今日第 ".$row_count." 次更改。你的新密码是：".$genpwd." <weicheng.app用户端邮件已送达>\" | mail -s \"weicheng.app用户端邮件\" ".$_COOKIE['email']."";
                                 $result_str = shell_exec($strstr);
     
