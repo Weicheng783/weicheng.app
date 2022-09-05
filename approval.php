@@ -30,7 +30,7 @@
 
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">'.$sql.'</p>';
 
-                    $re = $pdo->$query($sql);
+                    $re = $pdo->query($sql);
 
                     $rows = $re->fetchAll();
                     if($rows == null){
