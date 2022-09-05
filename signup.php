@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="mystyle.css">
         <script src="myscript.js"></script>
         <meta charset="utf-8">
-        <title>Weicheng Space Sign-in</title>
+        <title>Weicheng Space Sign-Up</title>
         <!-- Optimised for mobile users -->
         <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </head>
