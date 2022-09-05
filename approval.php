@@ -25,7 +25,8 @@
                     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
                     // $sql = 'SELECT * FROM `request` WHERE `email` = "'.htmlspecialchars($_GET['email']).'" AND `password` = "'.htmlspecialchars($_GET['password']).'";';
-                    $sql = 'SELECT * FROM `user`';
+                    // $sql = 'SELECT * FROM `user`';
+                    $sql = "SELECT * FROM user WHERE name='".$_COOKIE['name']."';";
                     $re = $pdo->$query($sql);
                     echo '<p class="narrator" style="font-size: medium; text-align: center; ">here。</p>';
 
