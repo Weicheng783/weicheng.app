@@ -27,7 +27,7 @@
                     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
                     // $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
-                    $re = $pdo->$query("SELECT * FROM request");
+                    $re = $pdo->$query("SELECT * FROM user");
                     $rows = $re->fetchAll();
                     echo $rows;
                     if($rows == null){
