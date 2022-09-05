@@ -85,7 +85,7 @@
                     $rows = $re->fetchAll();
                     if($rows == null){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户不存在，准备发送申请请求，正在检查是否超过每日重发次数，新用户注册每日单ip地址最多可重试5次</p>';
-                        $re = $pdo->query("SELECT * FROM request WHERE ip='".$_SERVER['REMOTE_ADDR']."';");
+                        $re = $pdo->query("SELECT * FROM request WHERE ip=".$_SERVER['REMOTE_ADDR'].";");
                         $row_count = $stmt->rowCount();
 
                         if($row_count >= 5){
