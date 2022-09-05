@@ -30,7 +30,7 @@
                     $re = $pdo->$query("SELECT * FROM request");
                     $rows = $re->fetchAll();
                     echo $rows;
-                    if($rows == NULL){
+                    if($rows == null){
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
                     }else{
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">验证下列信息是否可以通过</p>';
