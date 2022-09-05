@@ -12,7 +12,7 @@ if($_REQUEST['ok'] != "yes"){
     $strstr = "echo \"你的注册请求被拒绝(驳回)了哦❌。 用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email']."。驳回理由是：".$_REQUEST['cause']."。 <weicheng.app注册通知>\" | mail -s \"weicheng.app注册请求被驳回\" ".$_REQUEST['email']."";
     $result_str = shell_exec($strstr);
 
-    echo "<script>alert('Approval 已拒绝❌.'); location.href='index.php'</script>";
+    echo "<script>alert('Approval 已成功拒绝❌.'); location.href='index.php'</script>";
 }else{
     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
