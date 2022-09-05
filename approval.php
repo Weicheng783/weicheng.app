@@ -23,10 +23,10 @@
                     // We update the pdo to allow us login the specified database
                     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
                     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+                    echo '<p class="narrator" style="font-size: medium; text-align: center; ">here。</p>';
 
                     // $re = $pdo->$query("SELECT * FROM request WHERE name='".htmlspecialchars($_GET['email'])."' AND password='".htmlspecialchars($_GET['password'])."';");
                     $re = $pdo->$query("SELECT * FROM user");
-                    echo '<p class="narrator" style="font-size: medium; text-align: center; ">here。</p>';
 
                     $rows = $re->fetchAll();
                     if($rows == null){
