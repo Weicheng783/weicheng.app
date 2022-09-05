@@ -108,7 +108,7 @@
                         echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户存在，正在检查邮箱号与已知记录是否一致</p>';
 
                         if($_COOKIE['email'] === $rows[0]['email']){
-                            echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户名、邮箱号与已知记录一致，正在检查是否超过每日重发次数，每日每用户最多可重试5次</p>';
+                            echo '<p class="narrator" style="font-size: medium; text-align: center; ">用户名、邮箱号与已知记录一致</p>';
                             // $re = $pdo->query("SELECT * FROM request WHERE name='".$_SERVER['name']."';");
                             // $row_count = $stmt->rowCount();
 
@@ -120,7 +120,7 @@
     
                                 // SENDING LOGIC
                                 $genpwd = random_str(12);
-                                $strstr = "echo \"TA正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.ao@student.manchester.ac.uk";
+                                // $strstr = "echo \"TA正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.ao@student.manchester.ac.uk";
                                 $strstr = "echo \"你正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和管理员说的话是：".$_REQUEST['note'].", 你的新密码是：".$genpwd." <weicheng.app用户端邮件已送达>\" | mail -s \"weicheng.app用户端邮件\" ".$_COOKIE['email']."";
                                 $result_str = shell_exec($strstr);
     
@@ -132,10 +132,7 @@
                         }else{
                             echo '<p class="narrator" style="font-size: medium; text-align: center; color: red;">❌用户名、邮箱号与已知记录不一致，你是不是输错了什么字符？请返回重试。</p>'; 
                         }
-
                     }
-
-
                 }
                 catch(PDOException $e){
                     echo "<h3 style='text-align:center; color:red;'>❌数据库无法连接，可能正在维护，请稍晚些时候再试.</h3>";
