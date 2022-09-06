@@ -9,14 +9,11 @@ $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', '
 $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 $sql = 'SELECT * FROM `request` WHERE `email` = "'.htmlspecialchars($_REQUEST['email']).'" AND `password` = "'.htmlspecialchars($_REQUEST['password']).'";';
-
-echo '<p class="narrator" style="font-size: medium; text-align: center; ">'.$sql.'</p>';
-
 $re = $pdo->query($sql);
 
 $rows = $re->fetchAll();
 if($rows == null){
-    echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
+    echo '<p class="narrator" style="font-size: medium; text-align: center; ">service not available.</p>';
     die;
 }
 
