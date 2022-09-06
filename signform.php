@@ -126,7 +126,7 @@
                                 // SENDING LOGIC
                                 $genpwd = random_str(12);
                                 // $strstr = "echo \"TA正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.ao@student.manchester.ac.uk";
-                                $strstr = "echo \"你正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和管理员说的话是：".$_REQUEST['note'].", 你的新密码是：".$genpwd." <weicheng.app用户端邮件已送达>\" | mail -s \"weicheng.app用户端邮件\" ".$_COOKIE['email']."";
+                                $strstr = "echo \"你已经成功更改用户名为：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 你的新密码是：".$genpwd."，如果你的用户之前被锁定，现在已经解锁，可以正常登录。 <weicheng.app用户端邮件已送达>\" | mail -s \"weicheng.app用户端邮件\" ".$_COOKIE['email']."";
                                 $result_str = shell_exec($strstr);
 
                                 // power of the second security pass
