@@ -4,6 +4,22 @@ if(!isset($_REQUEST['ok']) or $_REQUEST['ok'] == null or $_REQUEST['ok'] == ""){
     die;
 }
 
+// We update the pdo to allow us login the specified database
+$pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+$sql = 'SELECT * FROM `request` WHERE `email` = "'.htmlspecialchars($_REQUEST['email']).'" AND `password` = "'.htmlspecialchars($_REQUEST['password']).'";';
+
+echo '<p class="narrator" style="font-size: medium; text-align: center; ">'.$sql.'</p>';
+
+$re = $pdo->query($sql);
+
+$rows = $re->fetchAll();
+if($rows == null){
+    echo '<p class="narrator" style="font-size: medium; text-align: center; ">❌查无此信息，不予放行。</p>';
+    die;
+}
+
 if($_REQUEST['ok'] != "yes"){
     $pdo = new pdo('mysql:host=localhost; port=3306; dbname=usertable', 'manager', 'awc020826');
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
