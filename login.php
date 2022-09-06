@@ -16,7 +16,7 @@
     $pdo1=new PDO($GLOBALS['dsn']."; dbname=usertable",$GLOBALS['user'], $GLOBALS['password']);
     $pdo1 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-    $sql1 = 'SELECT * FROM `user` WHERE `name` = "'.$_REQUEST['name'].';';
+    $sql1 = 'SELECT * FROM `user` WHERE `name` = "'.$_REQUEST['name'].'";';
 
     $stmt1 = $pdo1->query($sql1);
     $row_count1 = $stmt1->rowCount();
