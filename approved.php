@@ -14,6 +14,8 @@ $re = $pdo->query($sql);
 $rows = $re->fetchAll();
 if($rows == null){
     echo '<p class="narrator" style="font-size: medium; text-align: center; ">service not available.</p>';
+    $sql = 'DELETE FROM `request` WHERE `email` = "'.htmlspecialchars($_REQUEST['email']).'";';
+    $re = $pdo->query($sql);
     die;
 }
 
