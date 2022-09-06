@@ -128,10 +128,15 @@
                                 // $strstr = "echo \"TA正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和你说的话是：".$_REQUEST['note'].", TA的新密码是：".$genpwd." <weicheng.app注册请求审核系统>\" | mail -s \"weicheng.app用户管理系统\" weicheng.ao@student.manchester.ac.uk";
                                 $strstr = "echo \"你正在尝试更改用户名：".$_REQUEST['name'].", 邮箱号为：".$_REQUEST['email'].", 想和管理员说的话是：".$_REQUEST['note'].", 你的新密码是：".$genpwd." <weicheng.app用户端邮件已送达>\" | mail -s \"weicheng.app用户端邮件\" ".$_COOKIE['email']."";
                                 $result_str = shell_exec($strstr);
+
+                                // power of the second security pass
+                                $pdo1=new PDO($GLOBALS['dsn']."; dbname=usertable",$GLOBALS['user'], $GLOBALS['password']);
+                                $pdo1 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+                                $sql1 = 'UPDATE `user` SET `status` = "0" WHERE `user`.`name` = "'.$_REQUEST['name'].'";';
+                                $pdo1->query($sql1);
     
                                 $pdo->query("UPDATE `user` SET `password`='".$genpwd."' WHERE `name`='".$_REQUEST['name']."';");
-                                echo '<p class="narrator" style="font-size: medium; text-align: center; ">✅成功！你的密码理论上已经更改，新密码已发至你的邮箱，注意查收，时常检查垃圾邮箱的收信情况，你现在可以退出了。</p>';
-    // UPDATE `alternations` SET `time`='".date('Y/m/d H:i:s', time())."' WHERE `diary_id` = ".$id.";
+                                echo '<p class="narrator" style="font-size: medium; text-align: center; ">✅成功！你的密码理论上已经更改，用户已经解锁，新密码已发至你的邮箱，注意查收，时常检查垃圾邮箱的收信情况，你现在可以退出了。</p>';
                             // }
 
                         }else{
