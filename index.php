@@ -13,8 +13,7 @@
     <body style="background-color: antiquewhite;">
         <div id='header_group' style="display:block; text-align: center;">
             <p class="narrator" style="font-size: x-large; text-align: center; " id="ymd"></p>
-            <!-- <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button> -->
-
+            
             <?php
                 date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
