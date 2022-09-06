@@ -25,7 +25,7 @@
 
     if($row_count == 0 and $row_count1 == 0){
         echo "<script>alert('登录失败, 查无此人.'); location.href='index.php'</script>";
-    }else if($row_count1 != 0){
+    }else if($row_count == 0 and $row_count1 != 0){
         // wrong password case
         if($rows1[0]['status'] == ""){
             $status = 1;
