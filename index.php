@@ -23,7 +23,6 @@
 
             <?php
                 if(!isset($_COOKIE['name']) or $_COOKIE['name'] == null or $_COOKIE['name'] == ""){
-                    echo '<p class="narrator" style="font-size: medium; text-align: center; ">站点已经启用单点登录认证(Single Sign-On)，请知悉。</p>';
                     echo '<form action="login.php" method="post" style="display:center;">
                             <p>用户: <input name="name" class="input_font"></input></p>
                             <p>密码: <input type="password" name="password" class="input_font"></input></p>
