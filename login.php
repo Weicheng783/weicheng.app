@@ -43,6 +43,12 @@
             echo "<script>alert('登录失败, 密码错误, 你已经输错了 ".$status." 次密码，如果密码连续输错5次，用户会被锁定.'); location.href='index.php'</script>";
         }
     }else{
+        if($rows1[0]['status'] == ""){
+            $status = 1;
+        }else{
+            $status = $rows1[0]['status'] + 1;
+        }
+        
         if($status >= 5){
             echo "<script>alert('登录失败, 用户因输入密码错误次数过多而被锁定，需要重置密码.'); location.href='index.php'</script>";
         }else{
