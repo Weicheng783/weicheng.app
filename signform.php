@@ -22,7 +22,7 @@
             ?>
 
             <?php
-                if($_REQUEST['name'] == "" or $_REQUEST['email'] == "" or str_contains($_REQUEST['email'], "@")){
+                if($_REQUEST['name'] == "" or $_REQUEST['email'] == "" or !str_contains($_REQUEST['email'], "@")){
                     echo "<script>alert('用户名和邮箱号均不能为空，且邮箱格式需要正确。'); location.href='signup.php';</script>";
                     die;
                 }
