@@ -130,7 +130,7 @@
                                 $result_str = shell_exec($strstr);
 
                                 // power of the second security pass
-                                $pdo1=new PDO($GLOBALS['dsn']."; dbname=usertable",$GLOBALS['user'], $GLOBALS['password']);
+                                $pdo1 = new pdo('mysql:host=localhost; port=3306', 'manager', 'awc020826');
                                 $pdo1 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
                                 $sql1 = 'UPDATE `user` SET `status` = "0" WHERE `user`.`name` = "'.$_REQUEST['name'].'";';
                                 $pdo1->query($sql1);
