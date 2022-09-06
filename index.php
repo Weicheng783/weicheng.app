@@ -16,6 +16,12 @@
             <!-- <button id="follow" class="header_button" onclick="window.location.href='https://github.com/weicheng783'">Follow Me on Github</button> -->
 
             <?php
+                date_default_timezone_set('Europe/London');
+                $current_date = date('Y/m/d H:i:s');
+                echo '<p class="narrator" style="font-size: large; text-align: center; ">英国时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
+            ?>
+
+            <?php
                 if(!isset($_COOKIE['name']) or $_COOKIE['name'] == null or $_COOKIE['name'] == ""){
                     echo '<form action="login.php" method="post" style="display:center;">
                             <p>用户: <input name="name" class="input_font"></input></p>
@@ -25,10 +31,6 @@
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码/用户解冻/注册</button>';
 
                 }else{
-                    date_default_timezone_set('Europe/London');
-                    $current_date = date('Y/m/d H:i:s');
-                    echo '<p class="narrator" style="font-size: large; text-align: center; ">英国时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
-
                     echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
                     <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">';
 
