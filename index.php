@@ -18,6 +18,8 @@
                 date_default_timezone_set('Europe/London');
                 $current_date = date('Y/m/d H:i:s');
                 echo '<p class="narrator" style="font-size: large; text-align: center; ">英国时间: <strong id="serverYMD">'.$current_date.'</strong>.</p>';
+                echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
+                <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">';
             ?>
 
             <?php
@@ -30,9 +32,6 @@
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码/用户解冻/注册</button>';
 
                 }else{
-                    echo '<img src="./logo_2022.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">
-                    <img src="./logo.png" id="logo" alt="Weicheng_Space_Welcome_Message" style=" text-align: left; border-radius:20px; display:inline-block; height:100px; width:auto;">';
-
                     echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['name'].'</strong>，你好。</p>';
                     echo '<button class="header_button" onclick="location.href=\'out.php\';">退出登录</button>';
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码</button>';
