@@ -30,11 +30,13 @@
                             <p><button type="submit" class="header_button" onclick="">进入</button></p>
                             </form>';
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码/用户解冻/注册</button>';
+                    echo '<p class="narrator" style="font-size: x-large; text-align: center; "><button id="cv" class="header_button" onclick="window.location.href=\'https://weicheng.app/webmail\'">📮收信邮箱登录</button></p>';
 
                 }else{
                     echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['name'].'</strong>，你好。</p>';
                     echo '<button class="header_button" onclick="location.href=\'out.php\';">退出登录</button>';
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码</button>';
+                    echo '<button class="header_button" onclick="location.href=\'https://weicheng.app/webmail\';">📮收信邮箱登录</button>';
 
                     echo '<p class="narrator" style="font-size: x-large; text-align: center; ">#曼城少年，追光向前🌈</p>';
                     echo '<p class="narrator" style="font-size: x-large; text-align: center; ">#23年英硕进入备战倒计时🌈 All in!</p>';
