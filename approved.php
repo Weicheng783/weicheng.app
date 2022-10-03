@@ -42,20 +42,12 @@ if($_REQUEST['ok'] != "yes"){
         for ($i = 0; $i < $length; ++$i) {
             $str .= $keyspace[random_int(0, $max)];
         }
-        $special_chars = '!@$%^&*+=-/"#';
+        $special_chars = '!@%^*+=-/"#';
         $special_int_1 = random_int(0,12);
         $special_int_2 = random_int(0,12);
         $special_int_3 = random_int(0,12);
         $special_int_4 = random_int(0,12);
         $final = $special_chars[$special_int_3].$special_chars[$special_int_1].$str.$special_chars[$special_int_4].$special_chars[$special_int_2];
-
-        // create a user file propose
-        $myfile = fopen("/home/stuff/newuser.txt", "w") or die("Unable to open file during creating a new mail user!");
-        $namee = $name."\n";
-        fwrite($myfile, "create\n");
-        fwrite($myfile, $namee);
-        fwrite($myfile, $final);
-        fclose($myfile);
 
         return $final;
     }
