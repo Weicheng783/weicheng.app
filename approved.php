@@ -43,10 +43,10 @@ if($_REQUEST['ok'] != "yes"){
             $str .= $keyspace[random_int(0, $max)];
         }
         $special_chars = '!@%^*+=-/"#';
-        $special_int_1 = random_int(0,12);
-        $special_int_2 = random_int(0,12);
-        $special_int_3 = random_int(0,12);
-        $special_int_4 = random_int(0,12);
+        $special_int_1 = random_int(0,10);
+        $special_int_2 = random_int(0,10);
+        $special_int_3 = random_int(0,10);
+        $special_int_4 = random_int(0,10);
         $final = $special_chars[$special_int_3].$special_chars[$special_int_1].$str.$special_chars[$special_int_4].$special_chars[$special_int_2];
 
         return $final;
