@@ -30,7 +30,7 @@
                             <p><button type="submit" class="header_button" onclick="">进入</button></p>
                             </form>';
                     echo '<button class="header_button" onclick="location.href=\'signup.php\';">重置密码/用户解冻/注册</button>';
-                    echo '<button class="header_button" onclick="location.href=\'https://weicheng.app/webmail\';">📮收信邮箱登录</button>';
+                    echo '<p><button class="header_button" onclick="location.href=\'https://weicheng.app/webmail\';">📮收信邮箱登录</button></p>';
 
                 }else{
                     echo '<p class="narrator" style="font-size: medium; text-align: center; "><strong>'.$_COOKIE['name'].'</strong>，你好。</p>';
