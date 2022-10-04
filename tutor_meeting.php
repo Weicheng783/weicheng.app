@@ -44,9 +44,11 @@
                     echo '<div style="text-align:center;"><audio controls="controls" preload="none">
                         <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
                     </audio>
+
+                    <p style="text-align:center; font-size: large;">
                     <video controls crossorigin="anonymous" style="text-align:center;" src="https://weicheng.app/live/'.$filename.'">
                     <source class="u-audio" type="audio/mpeg" src="https://weicheng.app/live/'.$filename.'">
-                    <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default></video>
+                    <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default></video></p>
                     </div>';
                     $count ++;
                 }
