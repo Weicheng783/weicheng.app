@@ -46,8 +46,7 @@
                     </audio></div>';
                     echo '<video controls crossorigin="anonymous" style="text-align:center;" src="https://weicheng.app/live/'.$filename.'">
                     <source class="u-audio" type="audio/mpeg" src="https://weicheng.app/live/'.$filename.'">
-                    <track label="English" kind="subtitles" srclang="en" src="https://weicheng.app/live/'.substr($filename, 0, -4).'.vtt">
-                  </video>';
+                    <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default>                  </video>';
                     $count ++;
                 }
             }
