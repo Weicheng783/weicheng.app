@@ -43,10 +43,11 @@
                     echo "<p style='text-align:center; font-size: large;'><a href='https://weicheng.app/live/".$filename."' style='text-align:center;'>".$filename."</a></p>";
                     echo '<div style="text-align:center;"><audio controls="controls" preload="none">
                         <source src="https://weicheng.app/live/'.$filename.'" type="audio/mpeg" />
-                    </audio></div>';
-                    echo '<video controls crossorigin="anonymous" style="text-align:center;" src="https://weicheng.app/live/'.$filename.'">
+                    </audio>
+                    <video controls crossorigin="anonymous" style="text-align:center;" src="https://weicheng.app/live/'.$filename.'">
                     <source class="u-audio" type="audio/mpeg" src="https://weicheng.app/live/'.$filename.'">
-                    <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default>                  </video>';
+                    <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default></video>
+                    </div>';
                     $count ++;
                 }
             }
