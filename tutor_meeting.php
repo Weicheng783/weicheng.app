@@ -46,7 +46,7 @@
                     </audio>
 
                     <p style="text-align:center; font-size: large;">
-                    <video controls crossorigin="anonymous" style="text-align:center; width: 100%; height:50%;" src="https://weicheng.app/live/'.$filename.'">
+                    <video controls crossorigin="anonymous" style="text-align:center; width: 100%; height:50%;" src="https://weicheng.app/live/'.$filename.'" playsinline>
                     <source class="u-audio" type="audio/mpeg" src="https://weicheng.app/live/'.$filename.'">
                     <track label="English" kind="subtitles" srclang="en" src="./'.substr($filename, 0, -4).'.vtt" default></video></p>
                     </div>';
