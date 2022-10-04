@@ -149,7 +149,7 @@
 
 <style>
     video::-webkit-media-text-track-display {
-        font-size: 500%;
+        font-size: 300%;
     }
 
     #map {
