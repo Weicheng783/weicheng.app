@@ -146,6 +146,10 @@
 
 
 <style>
+    video::-webkit-media-text-track-display {
+        font-size: 500%;
+    }
+
     #map {
         position: relative; 
         top: 0; 
